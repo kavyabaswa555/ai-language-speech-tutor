@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LLM Meet Speech Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <h1>🎓 LLM Meet Speech Assistant</h1>
+
+            <p>
+                Ask questions using text or your voice.
+            </p>
+
+        </header>
+
+
+        <!-- TEXT INPUT -->
+        <section class="card">
+
+            <h2>💬 Ask with Text</h2>
+
+            <textarea
+                id="textInput"
+                placeholder="Type your question here..."
+                rows="5"
+            ></textarea>
+
+            <button
+                id="textButton"
+                type="button"
+            >
+                Generate Voice Response
+            </button>
+
+        </section>
+
+
+        <!-- VOICE INPUT -->
+        <section class="card">
+
+            <h2>🎤 Ask with Voice</h2>
+
+            <button
+                id="recordButton"
+                type="button"
+            >
+                🎤 Start Recording
+            </button>
+
+            <p id="recordStatus">
+                Click the button and start speaking.
+            </p>
+
+
+            <!-- Recorded audio -->
+            <audio
+                id="recordedAudio"
+                controls
+                hidden
+            ></audio>
+
+
+            <br><br>
+
+
+            <button
+                id="voiceButton"
+                type="button"
+                disabled
+            >
+                Send Voice Question
+            </button>
+
+        </section>
+
+
+        <!-- ERROR MESSAGE -->
+        <div
+            id="error"
+            class="error"
+        ></div>
+
+
+        <!-- RESULTS -->
+        <section
+            id="results"
+            class="card"
+            hidden
+        >
+
+            <h2>🤖 Assistant Response</h2>
+
+
+            <!-- TRANSCRIPT -->
+            <div class="result-section">
+
+                <h3>📝 Your Question</h3>
+
+                <p id="transcript"></p>
+
+            </div>
+
+
+            <!-- ANSWER -->
+            <div class="result-section">
+
+                <h3>💡 Answer</h3>
+
+                <p id="answer"></p>
+
+            </div>
+
+
+            <!-- GENERATED AUDIO -->
+            <div class="result-section">
+
+                <h3>🔊 Voice Response</h3>
+
+                <audio
+                    id="responseAudio"
+                    controls
+                    preload="auto"
+                    hidden
+                ></audio>
+
+                <br><br>
+
+                <a
+                    id="downloadLink"
+                    href="#"
+                    download="assistant_response.mp3"
+                    hidden
+                >
+                    ⬇️ Download Voice Response
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>
