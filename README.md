@@ -1,45 +1,52 @@
-# AI Voice Assistant — Speech → LLM → Speech
+# AI Language Speech Tutor 🎙️
 
-A beginner-friendly complete project based on the **LLMs Meet Speech** concept.
+An AI-powered language and speech tutor that allows users to interact with an AI using text or voice.
 
 ## What it does
-- Text mode: Text → LLM → Text-to-Speech → Play/Download MP3
-- Voice mode: Microphone → Speech-to-Text → LLM → Text-to-Speech → Play/Download MP3
 
-## Run locally
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-Copy `.env.example` to `.env` and add your API key, then:
-```bash
-uvicorn app.main:app --reload
-```
-Open http://127.0.0.1:8000
+The application supports two modes:
 
-## Docker
-```bash
-docker build -t ai-voice-assistant .
-docker run --rm -p 8000:8000 --env-file .env ai-voice-assistant
-```
+### Text Mode
+Text → Gemini → Text-to-Speech → Audio Response
 
-## Demo
-Type: "Explain Generative AI to a first-year engineering student."
-Click Generate Voice Response.
+### Voice Mode
+Microphone → Speech-to-Text → Gemini → Text-to-Speech → Audio Response
 
-Then try the microphone:
-"What is RAG and why is it useful?"
+Users can ask questions or speak naturally, and the AI generates a response that can be played as audio.
 
-## Learning flow
-Speech → STT → LLM → TTS → Speech
+## Key Features
 
-The project deliberately keeps the three AI components separate so students can understand the pipeline.
+- 🎤 Voice input
+- 📝 Text input
+- 🤖 Gemini-powered AI responses
+- 🗣️ Speech-to-text
+- 🔊 Text-to-speech
+- ▶️ Audio playback
+- ⬇️ Audio download
+- 🐳 Docker support
 
-## Extensions
-- RAG knowledge base
-- conversation history
-- multiple languages
-- selectable voices
-- tool calling
-- streaming
+## Technology Stack
+
+- Python
+- FastAPI
+- JavaScript
+- HTML
+- CSS
+- Google Gemini
+- Speech-to-Text
+- Text-to-Speech
+
+## Learning Flow
+
+```text
+User Voice
+    ↓
+Speech-to-Text
+    ↓
+Gemini AI
+    ↓
+AI Response
+    ↓
+Text-to-Speech
+    ↓
+Spoken Response
